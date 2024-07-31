@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Departments and HODs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .phone-number {
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copy-button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .copy-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .phone-number {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .copy-button {
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 6px;
+            }
+            .phone-number {
+                font-size: 12px;
+            }
+            .copy-button {
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Church Departments and Their HODs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Leader's Name</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ADMIN</td>
+                <td>MA MMESOMA DIMGBA</td>
+                <td class="phone-number">
+                    <span id="phone1">+2349055454405</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone1')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>MEDIA</td>
+                <td>SIR MIRACLE OKEKE</td>
+                <td class="phone-number">
+                    <span id="phone2">+2349032787854</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone2')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>CHOIR</td>
+                <td>MA CHISOM ONYENDUZI</td>
+                <td class="phone-number">
+                    <span id="phone3">+2348024136002</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone3')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>CONSOLIDATION</td>
+                <td>MA CHINEYE ABIAKA</td>
+                <td class="phone-number">
+                    <span id="phone4">+2349060671128</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone4')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>INTERCESSORY</td>
+                <td>MA OGONNA</td>
+                <td class="phone-number">
+                    <span id="phone5">+2347080950680</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone5')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>TEMPLE TENDERS/SANCTUARY</td>
+                <td>MA ESOMIKE MIRACLE</td>
+                <td class="phone-number">
+                    <span id="phone6">+234807 5083614</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone6')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>GREETERS</td>
+                <td>MA NWAJEI FAVOUR</td>
+                <td class="phone-number">
+                    <span id="phone7">+2348161685888</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone7')">Copy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>USHERING</td>
+                <td>MA BLESSING EZEKIEL</td>
+                <td class="phone-number">
+                    <span id="phone8">+2348144217716</span>
+                    <button class="copy-button" onclick="copyToClipboard('phone8')">Copy</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function copyToClipboard(id) {
+            var phoneNumber = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(phoneNumber).then(function() {
+                alert('Phone number copied to clipboard: ' + phoneNumber);
+            }, function(err) {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
